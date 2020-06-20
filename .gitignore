@@ -13,7 +13,6 @@ notes_and_backups/
 src/app/img/userPhotos/*
 !src/app/img/userPhotos/anonymous.jpg
 src/app/routes.*
-README.md
 dump.rdb
 frontPage/
 mtg_scheduler_dump/
