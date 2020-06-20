@@ -1,0 +1,24 @@
+# Dependency directories
+node_modules/
+
+# webpack bundles
+server/bundle.js
+server/bundle.js.map
+
+server/.certs/*
+server/selfIntros/*
+!server/selfIntros/anonymous.txt
+favicon.ico
+notes_and_backups/
+src/app/img/userPhotos/*
+!src/app/img/userPhotos/anonymous.jpg
+src/app/routes.*
+README.md
+dump.rdb
+frontPage/
+mtg_scheduler_dump/
+teacher_dump
+server/favicon.ico
+.directory
+.idea/
+
