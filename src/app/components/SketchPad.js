@@ -64,13 +64,11 @@ export default class SketchPad extends Component {
 	    this.tool.draw(item, this.props.animate);
 	  }
 	  else {
-      let CanvasTextWrapper = require('canvas-text-wrapper').CanvasTextWrapper;
 	 	  // let textChars = item;
 	 	  const { chars, color, startx, starty, fontSize, fontFamily } = item; 
 	 	  let context = this.canvas.getContext('2d');
 	 	  context.fillStyle = color;
       const font = fontSize + "px " + fontFamily + ", serif";
-      CanvasTextWrapper(this.canvas, chars, {font: font, strokeText: false, paddingX: startx, paddingY: starty, allowNewLine: true, renderHDPI: false }); 
 	  }
 	}
 
@@ -152,12 +150,12 @@ export default class SketchPad extends Component {
 		  this.props.setFillColor(this.props.fillColor);
   		this.props.resetClear();
   	};
-	}
+	};
 
   onMouseDown(e) {
     this.canvas = this.canvasRef;
     this.context = this.canvas.getContext('2d');
-      let data = this.tool.onMouseDown(...this.getCursorPosition(e), this.props.size, this.props.color, this.props.fill, this.props.fillColor, this.props.chars, this.props.fontFamily, this.props.fontSize, this.props.textboxVisibility, this.props.clear);
+      let data = this.tool.onMouseDown(...this.getCursorPosition(e), this.props.size, this.props.color, this.props.fill, this.props.fillColor, this.props.chars, this.props.fontFamily, this.props.fontSize, this.props.textboxVisibility, this.props.clear, this.canvas);
       data && data[0] && this.props.onItemStart && this.props.onItemStart.apply(null, data);
 		// console.log("onMouseDown. data: ", data);
 

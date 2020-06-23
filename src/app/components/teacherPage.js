@@ -74,6 +74,7 @@ class TeacherPage extends React.Component {
   	   classes = await axios.get(`/api/classes/${teacher}`);
 			if (classes.data.sessions.length != 0) {
 				     this.setState({classList: classes.data.sessions});
+				     this.setState({gettingDataText: ""});
 			}
 		} catch(errors) {
 			console.log("Error in getClassList in teacherPage.js");
@@ -101,7 +102,7 @@ class TeacherPage extends React.Component {
     
    const WhtBdButton = withRouter(({ history}) => (
      <WhiteboardButton style={{backgroundColor: this.state.buttonBgColor}}
-       onClick={() => { history.push('/whiteboard') }}> Whiteboard 
+       onClick={() => { history.push('/mtgScheduler/whiteboard') }}> Whiteboard 
    	 </WhiteboardButton>
    ))
 		return (
